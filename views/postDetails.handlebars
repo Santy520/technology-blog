@@ -1,0 +1,19 @@
+<!-- views/postDetails.handlebars -->
+
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+
+<h2>Comments</h2>
+
+{{#each post.comments}}
+  <div>
+    <p>{{this.content}}</p>
+    <p>Posted by: {{this.User.username}}</p>
+  </div>
+{{/each}}
+
+<form action="/post/comment" method="POST">
+  <input type="hidden" name="postId" value="{{post.id}}">
+  <textarea name="content" rows="4" cols="50"></textarea><br>
+  <button type="submit">Submit</button>
+</form>

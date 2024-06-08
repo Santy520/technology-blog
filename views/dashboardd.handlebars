@@ -1,0 +1,13 @@
+<!-- views/dashboard.handlebars -->
+
+<h1>Dashboard</h1>
+
+{{#each userPosts}}
+  <div>
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <a href="/post/{{id}}">Read more</a>
+  </div>
+{{/each}}
+
+<a href="/logout">Logout</a>
